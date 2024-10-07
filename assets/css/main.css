@@ -2366,6 +2366,7 @@ text-align: left;
   align-items: center;
   justify-content: center;
   position: relative;
+  flex-direction: column; 
 }
 
 .mission {
@@ -2392,6 +2393,7 @@ text-align: left;
   display: flex;
   align-items: center;
   justify-content: center;
+  flex: 1;
 }
 
 .mission-image img,
@@ -2416,5 +2418,19 @@ text-align: left;
 @media (max-width: 768px) {
   .container {
       grid-template-columns: 1fr;
-  }
+    }
+
+    .box {
+        height: auto; /* Reset height to auto on mobile */
+    }
+
+    .mission-image,
+    .vision-image {
+        height: 200px; /* Set a fixed height for the image box */
+    }
+
+    .mission,
+    .vision {
+        flex: 1; /* Make sure mission and vision have equal height */
+    }
 }
