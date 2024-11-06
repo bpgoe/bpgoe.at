@@ -2566,3 +2566,156 @@ text-align: left;
       margin-bottom: 5px; /* Space between buttons */
   }
 }
+
+/* ORG CHAART */
+
+.org-chart {
+  text-align: center;
+  margin: 0 auto;
+}
+
+.level {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+
+.person {
+  border: 2px solid #3b82f6;
+  border-radius: 10px;
+  padding: 40px;
+  margin: 30px;
+  background-color: #e6f0ff;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the image and text */
+  justify-content: center; /* Center the content vertically */
+}
+
+.person:hover {
+  transform: scale(1.08);
+}
+
+.person img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-bottom: 10px; /* Space between image and name */
+}
+
+.name {
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.position {
+  font-size: 16px;
+  color: #3b82f6;
+  margin-top: 10px;
+}
+
+.level-divider {
+  border: 0;
+  height: 2px;
+  background-color: #3b82f6; /* Blue color for the line */
+  margin: 20px auto; /* Center the line */
+  width: 90%; /* Width of the line */
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.4);
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.modal-content h2 {
+  margin: 10px 0;
+}
+
+.modal-content h4 {
+  margin: 5px 0;
+  color: #3b82f6;
+}
+
+.modal-content p {
+  margin: 10px 0;
+  font-size: 14px;
+  color: #333;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .person {
+    width: 45%; /* Make person containers responsive on larger mobile devices */
+    margin: 10px; /* Reduce margin to keep the chart contained */
+  }
+
+  .level {
+    justify-content: center; /* Center the level on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .person {
+    width: 90%; /* Make person containers take more width on smaller screens */
+    margin: 10px auto; /* Center the person containers */
+  }
+
+  .modal-content img {
+    width: 100px; /* Adjust modal image size for mobile */
+    height: 100px;
+  }
+
+  .name {
+    font-size: 18px; /* Slightly reduce font size for mobile */
+  }
+
+  .position {
+    font-size: 14px; /* Slightly reduce font size for mobile */
+  }
+
+  .modal-content h2 {
+    font-size: 20px; /* Adjust font size for mobile */
+  }
+
+  .modal-content h4 {
+    font-size: 16px; /* Adjust font size for mobile */
+  }
+}
