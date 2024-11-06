@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Insight</title>
+		<title>Members Directory</title>
 		<link rel="icon" href="images/Logo.png" type="image/x-icon">
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
@@ -31,21 +31,139 @@
 							<!-- Content -->
 								<section>
 									<header class="main">
-										<h1>Daniel Garces</h1>
-										<h2>Vice President</h2>
+										<h1>Organizational Chart</h1>
+
+										<div class="org-chart">
+											<!-- Level 1 -->
+											<div class="level level-1">
+											  <div class="person" data-name="Marjorie Akistoy" data-position="Obfrau" data-info="Marjorie is the CEO of the company.">
+												<img src="images/President.jpg" alt="Marjorie Akistoy">
+												<div class="name">Marjorie Akistoy</div>
+												<div class="position">Obfrau</div>
+											  </div>
+											</div>
+											
+											
+											<hr class="level-divider">
+										  
+											<!-- Level 2 -->
+											
+											<div class="level level-2">
+											  <div class="person" data-name="Daniel Garces" data-position="Obfrau Stellvertreter" data-info="Daniel manages multiple teams and ensures project success.">
+												<img src="images/Vice President.jpg" alt="Daniel Garces">
+												<div class="name">Daniel Garces</div>
+												<div class="position">Obfrau Stellvertreter</div>
+											  </div>
+											</div>
+
+											<hr class="level-divider">
+										  
+											<!-- Level 3 -->
+											<div class="level level-3">
+											  <div class="person" data-name="Karel Jane Cabanting" data-position="Secretary" data-info="PFA 2022 Upper Austria Gmunden">
+												<img src="images/Avatar.jpg" alt="Karel Jane Cabanting">
+												<div class="name">Karel Jane Cabanting</div>
+												<div class="position">Secretary</div>
+												
+											  </div>
+										  
+											  <div class="person" data-name="Ma. Louisa Bauer" data-position="Kassierin" data-info="Emily manages the backend development team.">
+												<img src="images/Avatar.jpg" alt="Ma. Louisa Bauer">
+												<div class="name">Ma. Louisa Bauer</div>
+												<div class="position">Kassierin</div>
+											  </div>
+										  
+											  <div class="person" data-name="Richel Boegner" data-position="Kassapruferin" data-info="Michael is the head of design and UI/UX.">
+												<img src="images/Avatar.jpg" alt="Richel Boegner">
+												<div class="name">Richel Boegner</div>
+												<div class="position">Kassapruferin</div>
+											  </div>
+										  
+											  <div class="person" data-name="Loriza Steiner" data-position="Pressereferentin" data-info="FSB/AA Caritas St.Pölten 2003">
+												<img src="images/Avatar.jpg" alt="Loriza Steiner">
+												<div class="name">Loriza Steiner</div>
+												<div class="position">Pressereferentin</div>
+											  </div>
+											</div>
+											
+											<hr class="level-divider">
+										  
+											<!-- Level 4 -->
+											<div class="level level-4">
+											  <div class="person" data-name="Maricon Salud" data-position="Kassierin Stellvertreterin" data-info="Tom works on the frontend projects under Mark.">
+												<img src="images/Avatar.jpg" alt="Maricon Salud">
+												<div class="name">Maricon Salud</div>
+												<div class="position">Kassierin Stellvertreterin</div>
+											  </div>
+										  
+											  <div class="person" data-name="Rexil Ortego Bordaje" data-position="Pressereferent" data-info="PFA 2023 Eferding,Upper Austria">
+												<img src="images/Pressereferent.jpg" alt="Rexil Ortego Bordaje">
+												<div class="name">Rexil Ortego Bordaje</div>
+												<div class="position">Pressereferent</div>
+											  </div>
+											</div>
+										  </div>
+										  
+										  <!-- Modal -->
+										  <div id="modal" class="modal">
+											<div class="modal-content">
+											  <span class="close">&times;</span>
+											  <img id="modal-img" src="" alt="">
+											  <h2 id="modal-name"></h2>
+											  <h4 id="modal-position"></h4>
+											  <p id="modal-info"></p>
+											</div>
+										  </div>
+										
+										<script>
+
+											// Get modal elements
+											const modal = document.getElementById('modal');
+											const modalImg = document.getElementById('modal-img');
+											const modalName = document.getElementById('modal-name');
+											const modalPosition = document.getElementById('modal-position');
+											const modalInfo = document.getElementById('modal-info');
+											const closeModal = document.querySelector('.close');
+
+											// Open modal when a person is clicked
+											document.querySelectorAll('.person').forEach(person => {
+											person.addEventListener('click', () => {
+												const imgSrc = person.querySelector('img').src;
+												const name = person.getAttribute('data-name');
+												const position = person.getAttribute('data-position');
+												const info = person.getAttribute('data-info');
+												
+
+												modalImg.src = imgSrc;
+												modalName.innerText = name;
+												modalPosition.innerText = position;
+												modalInfo.innerText = info;
+
+												modal.style.display = 'flex';
+											});
+											});
+
+											// Close modal when clicking 'X'
+											closeModal.addEventListener('click', () => {
+											modal.style.display = 'none';
+											});
+
+											// Close modal when clicking outside the modal content
+											window.addEventListener('click', (event) => {
+											if (event.target === modal) {
+												modal.style.display = 'none';
+											}
+											});
+
+										</script>
+
+
+
 									</header>
 
-									<span class="image main"><img src="images/2.jpg" alt="" /></span>
-
-									<div class="box">
-										<p>Greetings and welcome to the Bund Philippinischer Gesundheitskräfte in Österreich (BPGÖ).</p>
-										<p>As Vice President, I am proud to support our incredible network of Filipino healthcare professionals here in Austria. Our organization thrives because of the collective passion, expertise, and dedication of each of you. At BPGÖ, we are committed to empowering our members through opportunities for professional development, mentorship, and community engagement.</p>
-										<p>In addition to advancing our careers, BPGÖ provides a space where we celebrate our shared Filipino heritage, promote cultural exchange, and contribute to the well-being of both our Filipino and Austrian communities. Together, we not only strengthen our professional ties but also nurture a sense of belonging that transcends borders.</p>
-										<p>As we move forward, I encourage each member to take advantage of the resources, events, and programs we offer. Your active participation is the key to building a stronger, more connected community. Let’s continue working hand-in-hand to achieve excellence, both in our individual careers and as a unified organization.</p>
-										<p>I am excited for what the future holds and look forward to seeing the positive impact we can make together.</p>
-									</div>
-									
 								</section>
+
+							
 
 						</div>
 					</div>
@@ -160,7 +278,6 @@
 										<li class="icon solid fa-envelope"><a href="#">bpgoesterreich@gmail.com</a></li>
 										<li class="icon solid fa-phone">+43 676 54 10 742</li>
 										<li class="icon solid fa-home"> Stadlbreitener Anger 14, 1220 Wien Österreich</li>
-										
 									</ul>
 								</section>
 
