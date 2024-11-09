@@ -36,7 +36,7 @@
 										<div class="org-chart">
 											<!-- Level 1 -->
 											<div class="level level-1">
-											  <div class="person" data-name="Marjorie Akistoy" data-position="Obfrau" data-info="More Information">
+											  <div class="person" data-name="Marjorie Akistoy" data-position="Obfrau" data-info="More Information" data-info-2="Information Here" data-info-3="Information Here" data-info-4="Information Here">
 												<img src="images/President.jpg" alt="Marjorie Akistoy">
 												<div class="name">Marjorie Akistoy</div>
 												<div class="position">Obfrau</div>
@@ -49,7 +49,7 @@
 											<!-- Level 2 -->
 											
 											<div class="level level-2">
-											  <div class="person" data-name="Daniel Garces" data-position="Obfrau Stellvertreter" data-info="More Information">
+											  <div class="person" data-name="Daniel Garces" data-position="Obfrau Stellvertreter" data-info="More Information" data-info-2="Information Here" data-info-3="Information Here" data-info-4="Information Here">
 												<img src="images/Vice President.jpg" alt="Daniel Garces">
 												<div class="name">Daniel Garces</div>
 												<div class="position">Obfrau Stellvertreter</div>
@@ -60,26 +60,26 @@
 										  
 											<!-- Level 3 -->
 											<div class="level level-3">
-											  <div class="person" data-name="Karel Jane Cabanting" data-position="Secretary" data-info="PFA 2022 Upper Austria Gmunden">
+											  <div class="person" data-name="Karel Jane Cabanting" data-position="Secretary" data-info="Phil. Registered Nurse 2011" data-info-2="OR-DR Nurse" data-info-3="Member of ORNAP Iloilo, Phil." data-info-4="PFA 2022 Upper Austria Gmunden">
 												<img src="images/Avatar.jpg" alt="Karel Jane Cabanting">
 												<div class="name">Karel Jane Cabanting</div>
 												<div class="position">Schriftführerin</div>
 												
 											  </div>
 										  
-											  <div class="person" data-name="Ma. Louisa Bauer" data-position="Kassierin" data-info="More Information">
+											  <div class="person" data-name="Ma. Louisa Bauer" data-position="Kassierin" data-info="More Information" data-info-2="Information Here" data-info-3="Information Here" data-info-4="Information Here">
 												<img src="images/Avatar.jpg" alt="Ma. Louisa Bauer">
 												<div class="name">Ma. Louisa Bauer</div>
 												<div class="position">Kassierin</div>
 											  </div>
 										  
-											  <div class="person" data-name="Richel Boegner" data-position="Kassapruferin" data-info="More Information">
+											  <div class="person" data-name="Richel Boegner" data-position="Kassapruferin" data-info="More Information" data-info-2="Information Here" data-info-3="Information Here" data-info-4="Information Here">
 												<img src="images/Avatar.jpg" alt="Richel Boegner">
 												<div class="name">Richel Boegner</div>
 												<div class="position">Kassapruferin</div>
 											  </div>
 										  
-											  <div class="person" data-name="Loriza Steiner" data-position="Pressereferentin" data-info="FSB/AA Caritas St.Pölten 2003">
+											  <div class="person" data-name="Loriza Steiner" data-position="Pressereferentin" data-info="FSB/AA Caritas St.Pölten 2003" data-info-2="Information Here" data-info-3="Information Here" data-info-4="Information Here">
 												<img src="images/Avatar.jpg" alt="Loriza Steiner">
 												<div class="name">Loriza Steiner</div>
 												<div class="position">Pressereferentin</div>
@@ -90,13 +90,13 @@
 										  
 											<!-- Level 4 -->
 											<div class="level level-4">
-											  <div class="person" data-name="Maricon Salud" data-position="Kassierin Stellvertreterin" data-info="More Information">
+											  <div class="person" data-name="Maricon Salud" data-position="Kassierin Stellvertreterin" data-info="More Information" data-info-2="Information Here" data-info-3="Information Here" data-info-4="Information Here">
 												<img src="images/Avatar.jpg" alt="Maricon Salud">
 												<div class="name">Maricon Salud</div>
 												<div class="position">Kassierin Stellvertreterin</div>
 											  </div>
 										  
-											  <div class="person" data-name="Rexil Ortego Bordaje" data-position="Pressereferent" data-info="PFA 2023 Eferding,Upper Austria">
+											  <div class="person" data-name="Rexil Ortego Bordaje" data-position="Pressereferent" data-info="Phil. Registered Nurse 2015" data-info-2="Master of Arts in Nursing 2021" data-info-3="OR/DR/ER Nurse Kidapawan, Philippines" data-info-4="PFA 2023 Eferding, Upper Austria">
 												<img src="images/Pressereferent.jpg" alt="Rexil Ortego Bordaje">
 												<div class="name">Rexil Ortega Bordaje</div>
 												<div class="position">Pressereferent</div>
@@ -112,6 +112,10 @@
 											  <h2 id="modal-name"></h2>
 											  <h4 id="modal-position"></h4>
 											  <p id="modal-info"></p>
+											  <p><strong></strong> <span id="modal-info-2"></span></p>
+        									  <p><strong></strong> <span id="modal-info-3"></span></p>
+											  <p><strong></strong> <span id="modal-info-4"></span></p>
+
 											</div>
 										  </div>
 										
@@ -123,6 +127,9 @@
 											const modalName = document.getElementById('modal-name');
 											const modalPosition = document.getElementById('modal-position');
 											const modalInfo = document.getElementById('modal-info');
+											const modalInfo2 = document.getElementById('modal-info-2');
+											const modalInfo3 = document.getElementById('modal-info-3');
+											const modalInfo4 = document.getElementById('modal-info-4');
 											const closeModal = document.querySelector('.close');
 
 											// Open modal when a person is clicked
@@ -132,12 +139,18 @@
 												const name = person.getAttribute('data-name');
 												const position = person.getAttribute('data-position');
 												const info = person.getAttribute('data-info');
+												const info2 = person.getAttribute('data-info-2'); // Get contact detail
+												const info3 = person.getAttribute('data-info-3');
+												const info4 = person.getAttribute('data-info-4');
 												
 
 												modalImg.src = imgSrc;
 												modalName.innerText = name;
 												modalPosition.innerText = position;
 												modalInfo.innerText = info;
+												modalInfo2.innerText = info2;
+        										modalInfo3.innerText = info3;
+												modalInfo4.innerText = info4;
 
 												modal.style.display = 'flex';
 											});
